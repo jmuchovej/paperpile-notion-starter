@@ -1,0 +1,14 @@
+name: "Sync Paperpile to Notion"
+
+on: commit
+
+jobs:
+  sync-to-notion:
+    name: "Sync Paperpile to Notion"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: jmuchovej/paperpile-notion@0.3.0
+        with:
+          references: citation.bib
+          token: ${{ secrets.NOTION_INTEGRATION_TOKEN }}
