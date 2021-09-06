@@ -10,5 +10,5 @@ jobs:
       - uses: actions/checkout@v2
       - uses: jmuchovej/paperpile-notion@0.3.3
         with:
-          references: citations.bib
+          references: references.bib
           token: ${{ secrets.NOTION_INTEGRATION_TOKEN }}
