@@ -1,9 +1,7 @@
-dbs:
-  # Head to your `Article` database and copy/paste the URL here (or just the
-  #   part following your workspace name)
-  articles: Readings
-  # Head to your `Author` database and copy/paste the URL here (or just the part
-  #   following your workspace name)
+db:
+  # Write the name of your Articles database here
+  articles: Readings & Podcasts
+  # Write the name of your Authors database here
   authors: Authors
 
 
@@ -27,3 +25,19 @@ fields-methods:
   methods:
     # Methods should look like this:
     # <abbr>: { color: <color>, name: <name> }
+
+# You can feel free to omit this and we won't make use of this.
+bibtex:
+  venues:
+    book: publisher
+    article: journal
+    inproceedings: series
+    conference: series
+    proceedings: series
+
+  icons:
+    book: ":books:"
+    article: ":blue_book:"
+    inproceedings: ":bookmark_tabs:"
+    conference: ":bookmark_tabs:"
+    proceedings: ":bookmark_tabs:"
