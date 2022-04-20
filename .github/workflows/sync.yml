@@ -18,5 +18,6 @@ jobs:
       - name: "Begin Paperpile Sync"
         uses: "jmuchovej/paperpile-notion@latest"
         with:
+          # You can change this to whatever filename you desire
           references: "references.bib"
           token: "${{ secrets.NOTION_INTEGRATION_TOKEN }}"
