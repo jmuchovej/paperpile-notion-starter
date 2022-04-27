@@ -1,0 +1,15 @@
+name: "Sync Paperpile to Notion"
+
+on:
+  workflow_dispatch: { }
+  push:
+    paths:
+      - "**.bib"
+
+jobs:
+  sync-to-notion:
+    uses: jmuchovej/paperpile-notion/.github/workflows/sync.yaml@main
+    with:
+      references: "references.bib"
+    secrets:
+      token: "${{ secrets.NOTION_INTEGRATION_TOKEN }}"
