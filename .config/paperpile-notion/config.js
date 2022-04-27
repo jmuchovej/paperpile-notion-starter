@@ -55,4 +55,3 @@ const icons = {
 module.exports = {
   databases, status, topics, fields, methods, icons,
 }
-
