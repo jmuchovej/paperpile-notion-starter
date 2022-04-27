@@ -8,8 +8,20 @@ on:
 
 jobs:
   sync-to-notion:
-    uses: jmuchovej/paperpile-notion/.github/workflows/sync.yaml@main
-    with:
-      references: "references.bib"
-    secrets:
-      token: "${{ secrets.NOTION_INTEGRATION_TOKEN }}"
+    name: "Sync Paperpile to Notion"
+
+    runs-on: "ubuntu-latest"
+
+    concurrency:
+      group: "paperpile-sync"
+      cancel-in-progress: true
+
+    steps:
+      - name: "Checkout repository"
+        uses: "actions/checkout@v3"
+
+      - name: "Run `paperpile-notion` sync"
+        uses: "jmuchovej/paperpile-notion@latest"
+        with:
+          references: "references.bib"
+          token: "${{ secrets.NOTION_INTEGRATION_TOKEN }}"
